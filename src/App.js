@@ -3,10 +3,11 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 
 function App() {
+  const fecha = new Date().getFullYear()
   return (
     <Fragment>
-      <Header/>
-      <Footer/>
+      <Header titulo="Desde el header"/>
+      <Footer fecha={fecha}/>
     </Fragment>
   );
 }
