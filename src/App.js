@@ -12,13 +12,22 @@ function App() {
     {id: 2, nombre: 'Camiseta Vue', precio: 30},
     {id: 3, nombre: 'Camiseta JavaScript', precio: 20}
   ])
+  // Carrito de compras
+  const [carrito, agregarProducto] = useState([])
+
   return (
     <Fragment>
       <Header titulo="Desde el header"/>
       <h1>Listado de productos</h1>
       {
         productos.map(producto => (
-          <Producto producto={producto } key={producto.id} />
+          <Producto
+            key={producto.id}
+            producto={producto}
+            productos={productos}
+            carrito={carrito}
+            agregarProducto={agregarProducto}
+            />
         ))
       }
       <Footer fecha={fecha}/>
