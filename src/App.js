@@ -23,7 +23,7 @@ function App() {
       {
         productos.map(producto => (
           <Producto
-            key={producto.id}
+            key={`${Math.floor(Math.random() * 31231)}`}
             producto={producto}
             productos={productos}
             carrito={carrito}
@@ -31,7 +31,10 @@ function App() {
             />
         ))
       }
-      <Carrito carrito={carrito} />
+      <Carrito
+        carrito={carrito}
+        agregarProducto={agregarProducto}
+      />
       <Footer fecha={fecha}/>
     </Fragment>
   );
