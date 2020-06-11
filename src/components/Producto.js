@@ -4,7 +4,10 @@ const Producto = ({producto, productos, carrito, agregarProducto}) => {
   const {nombre, precio, id} = producto
   const agregarAlCarrito = (id) => {
     const producto = productos.filter(producto => producto.id === id)[0] // [0], porque filter crea un arreglo de objetos, y necesitamos el solo el objeto
-    console.log('Comprando... ', producto)
+    agregarProducto([
+      ...carrito,
+      producto
+    ])
   }
   return (
     <div>
