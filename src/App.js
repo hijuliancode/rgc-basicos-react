@@ -1,9 +1,16 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 
 function App() {
   const fecha = new Date().getFullYear()
+  // Crear listado de productos
+  const [productos, guardarProductos] = useState([
+    {id: 0, nombre: 'Camiseta ReactJS', precio: 40},
+    {id: 1, nombre: 'Camiseta Angular', precio: 50},
+    {id: 2, nombre: 'Camiseta Vue', precio: 30},
+    {id: 30, nombre: 'Camiseta JavaScript', precio: 20}
+  ])
   return (
     <Fragment>
       <Header titulo="Desde el header"/>
